@@ -35,12 +35,6 @@ int _printf(const char *format, ...)
 					break;
 				case ('s'):
 					s = va_arg(args, char *);
-					if (!s)
-					{
-						var = print_string("(nil)");
-						length += var;
-						break;
-					}
 					var = print_string(s);
 					length += var;
 					break;

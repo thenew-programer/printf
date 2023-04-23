@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 
+	length = 0;
 	va_start(args, format);
 	for (i = 0; format[i] != 0; i++)
 	{
@@ -31,21 +32,21 @@ int _printf(const char *format, ...)
 			{
 				case ('c'):
 					ch = (char) va_arg(args, int);
-					length = print_char(ch);
+					length += print_char(ch);
 					break;
 				case ('s'):
 					s = va_arg(args, char *);
 					if (!s)
 					{
-						length = print_string("(nil)");
+						length += print_string("(nil)");
 						break;
 					}
-					length = print_string(s);
+					length += print_string(s);
 					break;
 				case ('i'):
 				case ('d'):
 					d = va_arg(args, int);
-					length = print_int(d);
+					length += print_int(d);
 					break;
 			}
 			i++;

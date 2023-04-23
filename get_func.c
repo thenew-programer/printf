@@ -1,6 +1,11 @@
 #include "main.h"
 
 
+/**
+* print_string - print a string
+* @string: string to print
+* Return: number of chars printed
+*/
 int print_string(const char *string)
 {
 	int length;
@@ -9,6 +14,12 @@ int print_string(const char *string)
 	write(1, string, length);
 	return (length);
 }
+
+/**
+* print_int - print an integer
+* @number: parameter
+* Return: number of chars printed
+*/
 
 int print_int(int number)
 {
@@ -32,6 +43,11 @@ int print_int(int number)
 	}
 	return (i);
 }
+/**
+* print_char - print a char
+* @ch: char to print
+* Return: 1
+*/
 
 int print_char(char ch)
 {

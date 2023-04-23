@@ -27,6 +27,7 @@ int print_int(int number)
 	int i, j,fraction;
 	int arr[10];
 
+	i = 0;
 	while(1)
 	{
 		if (number == 0)

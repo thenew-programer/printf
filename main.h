@@ -8,15 +8,26 @@
 #include <unistd.h>
 
 
+/**
+* struct flags_t - struct for flags and functions
+*/
+typedef struct
+{
+	char spe;
+	int (*print)(va_list);
+} printHandler;
+
 int _printf(const char *format, ...);
 
-int _putchar(char);
+int _putchar(char c);
 
-int print_string(const char *);
+int print_string(va_list args);
 
-int print_int(int);
+int print_int(va_list args);
 
-int print_char(char);
+int print_char(va_list args);
+
+int (*call_print(char ch))(va_list);
 
 
 #endif

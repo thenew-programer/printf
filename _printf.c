@@ -8,43 +8,34 @@
 
 int _printf(const char *format, ...)
 {
-	int i, length, var;
-	char *s, ch;
+	int (*printFunc)(va_list);
+	const char *ptr;
 	va_list args;
+	register int length;
 
-	if ((!format || (format[0] == '%' && !format[1]))
-		|| (format[0] == '%' && format[1] == ' ' && !format[2]))
-		return (-1);
 
 	va_start(args, format);
-	for (i = 0; format[i] != 0; i++)
+	if ((!format || (format[0] == '%' && !format[1]))
+	|| (format[0] == '%' && format[1] == ' ' && !format[2]))
+		return (-1);
+
+	for (ptr = format; *ptr; ptr++)
 	{
-		if (format[i] == '%' && format[i + 1] != 0)
+		if (*ptr == '%')
 		{
-			switch (format[i + 1])
+			ptr++;
+			if(*ptr == '%')
 			{
-				case ('c'):
-					ch = (char) va_arg(args, int);
-					var = print_char(ch);
-					length += var;
-					break;
-				case ('s'):
-					s = va_arg(args, char *);
-					var = print_string(s);
-					length += var;
-					break;
-				case ('i'):
-				case ('d'):
-					/*d = va_arg(args, int);*/
-					var = print_int(va_arg(args, int));
-					length += var;
-					break;
+				length += _putchar('%');
+				continue;
 			}
-			i++;
+			printFunc = call_print(*ptr);
+			length += printFunc(args);
 		}
 		else
-			_putchar(format[i]);
+			length += _putchar(*ptr);
 	}
 	va_end(args);
-	return (i);
+	return (length);
+
 }

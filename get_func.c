@@ -1,6 +1,11 @@
 #include "main.h"
 
 
+/**
+ * call_print - return the appropriate function for printing
+ * @ch: char to test with
+ * Return: function pointer.
+ */
 int (*call_print(char ch))(va_list)
 {
 	printHandler ph[] = {
@@ -12,7 +17,7 @@ int (*call_print(char ch))(va_list)
 	int i, flags;
 
 	flags = 4;
-	for (i = 0; i <flags; i++)
+	for (i = 0; i < flags; i++)
 	{
 		if (ph[i].spe == ch)
 			return (ph[i].print);
@@ -23,7 +28,7 @@ int (*call_print(char ch))(va_list)
 
 /**
 * print_string - print a string
-* @string: string to print
+* @args: va_list argument
 * Return: number of chars printed
 */
 int print_string(va_list args)
@@ -39,7 +44,7 @@ int print_string(va_list args)
 
 /**
 * print_int - print an integer
-* @number: parameter
+* @args: va_list argument
 * Return: number of chars printed
 */
 
@@ -80,7 +85,7 @@ int print_int(va_list args)
 }
 /**
 * print_char - print a char
-* @ch: char to print
+* @args: va_list argument
 * Return: 1
 */
 

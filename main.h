@@ -9,9 +9,11 @@
 
 
 /**
-* struct flags_t - struct for flags and functions
+* struct printHandler - struct for flags and functions
+* @spe: char parameter
+* @print: func parameter
 */
-typedef struct
+typedef struct printHandler
 {
 	char spe;
 	int (*print)(va_list);

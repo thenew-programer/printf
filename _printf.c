@@ -11,8 +11,8 @@ int _printf(const char *format, ...)
 	int (*printFunc)(va_list);
 	const char *ptr;
 	va_list args;
-	register int length;
 
+	register int length;
 
 	va_start(args, format);
 	if ((!format || (format[0] == '%' && !format[1]))
@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		if (*ptr == '%')
 		{
 			ptr++;
-			if(*ptr == '%')
+			if (*ptr == '%')
 			{
 				length += _putchar('%');
 				continue;

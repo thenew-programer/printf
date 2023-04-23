@@ -15,7 +15,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i;
+	int i, length, var;
 	char *s, ch;
 	va_list args;
 	if (!format)
@@ -30,21 +30,25 @@ int _printf(const char *format, ...)
 			{
 				case ('c'):
 					ch = (char) va_arg(args, int);
-					print_char(ch);
+					var = print_char(ch);
+					length += var;
 					break;
 				case ('s'):
 					s = va_arg(args, char *);
 					if (!s)
 					{
-						print_string("(nil)");
+						var = print_string("(nil)");
+						length += var;
 						break;
 					}
-					print_string(s);
+					var = print_string(s);
+					length += var;
 					break;
 				case ('i'):
 				case ('d'):
 					/*d = va_arg(args, int);*/
-					print_int(va_arg(args, int));
+					var = print_int(va_arg(args, int));
+					length += var;
 					break;
 			}
 			i++;

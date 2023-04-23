@@ -10,11 +10,11 @@
 
 int _printf(const char *format, ...);
 
-void print_string(const char *string);
+int print_string(const char *string);
 
-void print_int(int number);
+int print_int(int number);
 
-void print_char(char ch);
+int print_char(char ch);
 
 int _putchar(char c);
 

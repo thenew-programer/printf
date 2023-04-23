@@ -15,7 +15,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i, d;
+	int i, d, length;
 	char *s, ch;
 	va_list args;
 
@@ -27,28 +27,25 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1] != 0)
 		{
-			switch (format[i+1])
+			switch (format[i++])
 			{
 				case ('c'):
 					ch = (char) va_arg(args, int);
-					print_char(ch);
+					length = print_char(ch);
 					break;
 				case ('s'):
 					s = va_arg(args, char *);
 					if (!s)
 					{
-						print_string("(nil)");
+						length = print_string("(nil)");
 						break;
 					}
-					print_string(s);
+					length = print_string(s);
 					break;
 				case ('i'):
-					d = va_arg(args, int);
-					print_int(d);
-					break;
 				case ('d'):
 					d = va_arg(args, int);
-					print_int(d);
+					length = print_int(d);
 					break;
 			}
 			i++;
@@ -59,5 +56,5 @@ int _printf(const char *format, ...)
 	  	}
 	}
 	va_end(args);
-	return (i);
+	return (i + length);
 }

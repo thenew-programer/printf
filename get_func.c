@@ -24,7 +24,7 @@ int print_string(const char *string)
 int print_int(int number)
 {
 
-	int i, j,fraction, sign;
+	int i, j, fraction, sign;
 	int arr[10];
 
 	i = 0;
@@ -35,7 +35,7 @@ int print_int(int number)
 		sign = -1;
 	}
 
-	while(1)
+	while (1)
 	{
 		if (number == 0)
 			break;

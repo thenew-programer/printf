@@ -2,17 +2,20 @@
 #define MAIN
 
 #include <stdarg.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 
 int _printf(const char *format, ...);
 
 int _putchar(char);
 
-void print_string(const char *);
+int print_string(const char *);
 
-void print_int(int);
+int print_int(int);
 
-void print_char(char);
+int print_char(char);
 
 
 #endif

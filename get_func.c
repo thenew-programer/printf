@@ -1,17 +1,27 @@
 #include "main.h"
-#include <string.h>
-#include <stdio.h>
 
 
-void print_string(const char *string)
+/**
+* print_string - print a string
+* @string: string to print
+* Return: number of chars printed
+*/
+int print_string(const char *string)
 {
 	int length;
 
 	length = strlen(string);
 	write(1, string, length);
+	return (length);
 }
 
-void print_int(int number)
+/**
+* print_int - print an integer
+* @number: parameter
+* Return: number of chars printed
+*/
+
+int print_int(int number)
 {
 
 	int i, j,fraction;
@@ -31,9 +41,16 @@ void print_int(int number)
 	{
 		_putchar(arr[j] + '0');
 	}
+	return (i);
 }
+/**
+* print_char - print a char
+* @ch: char to print
+* Return: 1
+*/
 
-void print_char(char ch)
+int print_char(char ch)
 {
 	_putchar(ch);
+	return (1);
 }

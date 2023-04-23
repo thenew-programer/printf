@@ -14,9 +14,18 @@ int print_int(int number)
 {
 
 	int i, j,fraction;
+	int sign;
 	int arr[10];
 
 	i = 0;
+	sign = +1;
+	if (number < 0)
+	{
+
+		number *= -1;
+		sign = -1;
+	}
+
 	while(1)
 	{
 		if (number == 0)
@@ -26,6 +35,8 @@ int print_int(int number)
 		number /= 10;
 		arr[i++] = fraction;
 	}
+	if (sign == -1)
+		_putchar('-');
 
 	for (j = i - 1; j >= 0; j--)
 	{
@@ -38,4 +49,23 @@ int print_char(char ch)
 {
 	_putchar(ch);
 	return (1);
+}
+
+
+int print_octal(int number)
+{
+	int i, j, fraction;
+	int sign;
+	int arr[10];
+
+	i = 0;
+	sign = +1;
+	if (number < 0)
+	{
+		number *= -1;
+		sign = -1;
+	}
+
+	while(1)
+	return (i);
 }

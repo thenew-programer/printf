@@ -1,17 +1,16 @@
 #include "main.h"
-#include <string.h>
-#include <stdio.h>
 
 
-void print_string(const char *string)
+int print_string(const char *string)
 {
 	int length;
 
 	length = strlen(string);
 	write(1, string, length);
+	return (length);
 }
 
-void print_int(int number)
+int print_int(int number)
 {
 
 	int i, j,fraction;
@@ -31,9 +30,12 @@ void print_int(int number)
 	{
 		_putchar(arr[j] + '0');
 	}
+	return (i);
 }
 
-void print_char(char ch)
+int print_char(char ch)
 {
 	_putchar(ch);
+	return (1);
 }
+

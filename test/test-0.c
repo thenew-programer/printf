@@ -1,13 +1,9 @@
 #include "main.h"
 
-int main(int argc, char **argv)
+int main(void)
 {
 
-	print_string("hello, world\n");
-	_putchar(10);
-	print_int(1342);
-	_putchar(10);
-	print_char('c');
-	_putchar(10);
+	_printf("Hello, world\n%d + %i = %d\nThis is string: %s\nThis is char: %c\b\n"
+		 , 2, 2, 4, "Eid Mobarak", 'Y');
 	return 0;
 }

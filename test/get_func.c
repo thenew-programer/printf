@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdio.h>
 
-char* itoa(int num, char* buffer, int base);
 
 void print_string(const char *string)
 {
@@ -18,6 +17,7 @@ void print_int(int number)
 	int i, j,fraction;
 	int arr[10];
 
+	i = 0;
 	while(1)
 	{
 		if (number == 0)

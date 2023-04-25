@@ -49,3 +49,4 @@ int get_precision(const char *format, int *i, va_list list)
 /*    */
 /*    */
 /*    */
+/*    */

@@ -32,4 +32,3 @@ int get_flags(const char *format, int *i)
 
 	return (flags);
 }
-This is a new line to add
